@@ -1,0 +1,16 @@
+
+              
+                
+                    <div class="normalw">
+                       {{username}} {{cus_acc}}先生/女士，您好： 
+                    </div>
+
+                    {{#if login_flag}}
+                        {{#if check_cus}}
+							<div class="normalw_blue">客戶姓名：{{cus_username}} ({{cus_broker}}-{{cus_cus_acc}}) </div>
+                        {{^}} 
+                            <div class="normalw_red">請先設定欲查詢的客戶帳號!</div> 
+                        {{/if}}            
+                    {{/if}}
+                    
+              

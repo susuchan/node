@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>永豐金證券複委託</title>
+
+    <!-- Bootstrap -->
+    <link href="../../css/bootstrap.css" rel="stylesheet" type="text/css">
+
+    <!-- home -->    
+    <link href="../../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="../../plugins/cubeportfolio/css/cubeportfolio.min.css">
+	<link href="../../css/nivo-lightbox.css" rel="stylesheet" />
+	<link href="../../css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+	<link href="../../css/owl.carousel.css" rel="stylesheet" media="screen" />
+    <link href="../../css/owl.theme.css" rel="stylesheet" media="screen" />
+	<link href="../../css/animate.css" rel="stylesheet" />
+	<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+
+	<!-- boxed bg -->
+	<link id="bodybg" href="bodybg/bg1.css" rel="stylesheet" type="text/css" />
+	<!-- template skin -->
+	<link id="t-colors" href="../../color/red.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+
+<!-- Login table -------------------->
+{{#if login_flag}}
+{{> ae_login_tb}}
+{{^}}
+{{> login_tb}}
+{{/if}}
+
+
+<div id="wrapper">
+
+	<input type="hidden" id="alert_msg" value="{{alert_msg}}"> 
+
+
+	<!-- Header and menu -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+		
+        <div class="top-area">
+			<div class="container">
+				<div class="row">
+				</div>
+			</div>
+		</div>
+
+
+
+        <div class="container navigation">
+		
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+
+                <a class="navbar-brand" href="/">
+                    <img src="../../images/logo.png" alt="" width="300" height="50" />
+                </a>
+
+            </div>
+
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    
+	
+	<!-- Section: intro -->
+    <section id="intro" class="intro">
+		<div class="maintenance-content">
+			<div class="container">
+			
+				<div class="row">
+
+
+
+					<div class="col-lg-6">
+                        <div class="wow fadeInDown" data-wow-offset="0" data-wow-delay="0.1s">
+                        <h2 class="h-ultra-gray">永豐金證券複委託</h2>
+                        </div>
+                        <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.1s">
+                        <h4 class="h-light-gray">SinoPac Securities</h4>
+                        </div>
+					</div>	
+
+
+						<div class="wow fadeInDown" data-wow-offset="0" data-wow-delay="0.2s">
+						<div class="maintenance_info">{{maintenance_msg}}</div>
+						</div>
+
+
+
+				</div>	
+
+
+			</div>
+		</div>		
+    </section>
+	
+	<!-- /Section: intro -->
+
+
+
+
+
+	<footer>
+		<div class="sub-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-md-6 col-lg-6">
+					<div class="wow fadeInLeft" data-wow-delay="0.1s">
+					<div class="text-left">
+					<p>&copy;Copyright - SinoPac Securities. All rights reserved.</p>
+					</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-6 col-lg-6">
+					<div class="wow fadeInRight" data-wow-delay="0.1s">
+					<div class="text-right">
+						<div class="credits">
+                            <a href="http://www.sinotrade.com.tw/" target="_blank" class="wa13">永豐金證券股份有限公司</a> 台北市重慶南路一段二號7、8樓 | <a href="http://www.sinotrade.com.tw/Location" class="wa13">營業據點</a>
+                        </div>
+					</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+		</div>
+	</footer>
+
+</div>
+
+    
+
+	<!-- Core JavaScript Files -->
+    <script src="../../js/jquery.min.js"></script>	 
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/jquery.easing.min.js"></script>
+	<script src="../../js/wow.min.js"></script>
+	<script src="../../js/jquery.scrollTo.js"></script>
+	<script src="../../js/jquery.appear.js"></script>
+	<script src="../../js/stellar.js"></script>
+	<script src="../../plugins/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+	<script src="../../js/owl.carousel.min.js"></script>
+	<script src="../../js/nivo-lightbox.min.js"></script>
+    <script src="../../js/custom.js"></script>
+
+
+</script>
+
+</body>
+
+</html>

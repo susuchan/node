@@ -1,0 +1,30 @@
+<!-- Login table -------------------->
+        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+              <div class="col-sm-6 col-sm-offset-3 form-box">
+
+                <div class="form-top">
+                    <div class="form-top-left">
+                        <h3>AE Login</h3>
+                        <p>請輸入員工編號及密碼登入:</p>
+                    </div>
+                    <div class="form-top-right">
+                        <i class="fa fa-lock"></i>
+                    </div>
+                </div>
+                <div class="form-bottom">
+                    <form role="form" action="/login" method="post" id="login-form" class="login-form">
+                        <input type="hidden" name="login_flag" class="form-username form-control" id="form-login_flag" value="AE">                  
+                        <div class="form-group">
+                            <label class="sr-only" for="form-idno">員工編號</label>
+                            <input type="text" name="idno" placeholder="員工編號..." class="form-username form-control" id="form-idno">
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="form-password">密碼</label>
+                            <input type="password" name="password" placeholder="密碼..." class="form-password form-control" id="form-password">
+                        </div>
+                        <button type="submit" class="btn">登入</button>
+                    </form>
+                </div>
+
+			</div>
+		  </div>

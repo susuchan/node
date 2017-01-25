@@ -1,0 +1,33 @@
+{
+  "name": "SBWebNode",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "forever -a -l sbweb.log start bin/www",
+    "stop": "forever stop bin/www",
+    "forever-webui": "node node_modules/forever-webui/app.js",
+    "forever-webui-adduser": "node node_modules/forever-webui/add_user.js"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "compression": "^1.6.2",
+    "connect-mongo": "^1.3.2",
+    "connect-redis": "^3.1.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "~4.13.4",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.14.1",
+    "forever": "^0.15.2",
+    "forever-webui": "^0.3.0",
+    "guid": "0.0.12",
+    "helmet": "^2.3.0",
+    "jade": "~1.11.0",
+    "log4js": "^0.6.38",
+    "morgan": "~1.7.0",
+    "node-uuid": "^1.4.7",
+    "promise": "^7.1.1",
+    "serve-favicon": "~2.3.0",
+    "webpage": "^0.3.0"
+  }
+}

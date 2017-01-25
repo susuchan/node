@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>永豐金證券複委託</title>    
+
+    <!-- JS -->
+    <script src="../../js/jquery.min.js"></script>	 
+    <script src="../../js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- home -->    
+    <link href="../../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="../../plugins/cubeportfolio/css/cubeportfolio.min.css">
+	<link href="../../css/nivo-lightbox.css" rel="stylesheet" />
+	<link href="../../css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+	<link href="../../css/owl.carousel.css" rel="stylesheet" media="screen" />
+    <link href="../../css/owl.theme.css" rel="stylesheet" media="screen" />
+	<link href="../../css/animate.css" rel="stylesheet" />
+	<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+
+    <!-- template skin -->
+	<link id="t-colors" href="../../color/red.css" rel="stylesheet">
+
+    <!-- bootstrap-datetimepicker -->    
+    <link href="/css/prettify-1.0.css" rel="stylesheet" />
+    <link href="/css/base.css" rel="stylesheet" /> 
+    <link href="/css/bootstrap-datetimepicker.css" rel="stylesheet" />    
+    <script src="/js//moment-with-locales.js"></script>
+    <script src="/js/bootstrap-datetimepicker.js" type="application/javascript"></script>
+
+    <!-- footable -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="/css/footable.standalone.css" rel="stylesheet" type="text/css" />
+    <link href="/css/footable.core.css?v=2-0-1" rel="stylesheet" type="text/css" />
+
+    <script src="/js/footable.js"></script>
+    <script src="/js/footable.sort.js"></script>
+    <script src="/js/footable.paginate.js?v=2-0-1" type="text/javascript"></script>
+    <script src="/js/footable.pager.js"></script>
+    <script src="/js/bootstrap-tab.js"></script>
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+
+
+<!-- Login table -------------------->
+{{#if login_flag}}
+{{> ae_login_tb}}
+{{^}}
+{{> login_tb}}
+{{/if}}
+
+
+
+
+
+<div id="wrapper">    
+
+    <!-- 頁面表頭 MENU --------------------->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+		
+        <div class="top-area">
+			<div class="container">
+				<div class="row">
+					<!--<div class="col-sm-6 col-md-6">
+					<p class="bold text-left">Monday - Saturday, 8am to 10pm </p>
+					</div>
+					<div class="col-sm-6 col-md-6">
+					<p class="bold text-right">Call us now 008-038-123</p>
+					</div>-->
+				</div>
+			</div>
+		</div>
+
+        <div class="container navigation">
+		
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+				{{#if login_flag}}
+                <a class="navbar-brand" href="/AE">
+                    <img src="../../images/logo.png" alt="" width="300" height="50" />
+                </a>
+				{{^}}
+                <a class="navbar-brand" href="/">
+                    <img src="../../images/logo.png" alt="" width="300" height="50" />
+                </a>
+				{{/if}}	
+            </div>
+
+
+			{{#if signin}}
+				{{#if ae_flag}}
+				<div class="navbar-header page-scroll">
+						<div class="ae_hierarchy">
+							<p class="text-right">{{> ae_hierarchy}}</p>
+						</div>				
+				</div>
+				{{else if admin_flag}}
+				<div class="navbar-header page-scroll">
+						<div class="admin_hierarchy">
+							<p class="text-right">{{> admin_hierarchy}}</p>
+						</div>				
+				</div>
+				{{/if}}
+			{{/if}}
+
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+			  <ul class="nav navbar-nav">
+					{{#if signin}}
+					    {{#if login_flag}}
+						<li><a href="/logout"><i class="glyphicon glyphicon-user"></i>[AE登出]</a></li>
+						{{^}}
+						<li><a href="/logout"><i class="glyphicon glyphicon-user"></i>[登出]</a></li>
+						{{/if}}
+						
+						{{>menu_list}}
+
+					{{^}}					
+					    {{#if login_flag}}
+					    <li><a href="#" data-toggle="modal" data-target="#login-modal"><i class="glyphicon glyphicon-user"></i>[AE登入]</a></li>
+						{{^}}
+						<li><a href="#" data-toggle="modal" data-target="#login-modal"><i class="glyphicon glyphicon-user"></i>[登入]</a></li>
+						{{/if}}						
+					{{/if}}	
+
+			  </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+
+            
+        </div>
+        <!-- /.container -->
+    </nav>
+            
+
+
+
+
+
+        <!-- 頁面內容  ----------------------->
+        <!-- Section: boxes -->
+        <section id="boxes" class="home-section paddingtop-120">    
+            <div class="boxes_container">      
+                <!-- User Hello world -->
+
+  <ol class="breadcrumb">
+    <li><a href="/"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+    <li class="active">{{header}}</li>
+  </ol>
+{{!--
+<div class="page-header">
+    <h4>{{header}}</h4>      
+</div>
+--}}
+                {{#if signin}}
+                {{> hello}}
+                {{/if}}
+
+                <!-- page content -->
+                {{{body}}}
+
+            </div>
+       </section>
+
+
+
+
+
+
+    <footer>
+		<div class="sub-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-md-6 col-lg-6">
+					<div class="wow fadeInLeft" data-wow-delay="0.1s">
+					<div class="text-left">
+					<p>&copy;Copyright - SinoPac Securities. All rights reserved.</p>
+					</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-6 col-lg-6">
+					<div class="wow fadeInRight" data-wow-delay="0.1s">
+					<div class="text-right">
+						<div class="credits">
+                            <a href="http://www.sinotrade.com.tw/" target="_blank" class="wa13">永豐金證券股份有限公司</a> 台北市重慶南路一段二號7、8樓 | <a href="http://www.sinotrade.com.tw/Location" class="wa13">營業據點</a>
+                        </div>
+					</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+		</div>
+	</footer>
+
+</div>
+
+
+	<!-- Core JavaScript Files     
+    <script src="../../js/jquery.easing.min.js"></script>--> 
+	<script src="../../js/wow.min.js"></script>
+	<script src="../../js/jquery.scrollTo.js"></script>
+	<script src="../../js/jquery.appear.js"></script>
+	<script src="../../js/stellar.js"></script>
+	<script src="../../plugins/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+	<script src="../../js/owl.carousel.min.js"></script>
+	<script src="../../js/nivo-lightbox.min.js"></script>
+    <script src="../../js/custom.js"></script>
+
+    </body>
+</html>

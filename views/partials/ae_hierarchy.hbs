@@ -1,0 +1,26 @@
+
+    <form id="changecform" name="changecform" method="post" action="/change/customer">
+        <input type="hidden" name="original_url" value="{{original_url}}">
+        <select name="cus_idno" class="selectpicker">
+            <option>--- 請選擇客戶 ---</option>
+{{!-- 
+{{#each ae_customer.customer}}  
+        <optgroup label="{{this.name}}">
+        {{#each this.customer}}            
+            <option value="{{this.idno}}">{{this.idno}} {{this.name}} ({{this.open_belong}}-{{this.cus_acc}})</option>
+        {{/each}}
+        </optgroup>
+ {{/each}}
+--}}
+       
+       <optgroup label="{{username}}">
+        {{#each ae_customer.customer}}            
+            <option value="{{this.idno}}">{{this.idno}} {{this.name}} ({{this.open_belong}}-{{this.cus_acc}})</option>
+        {{/each}}
+        </optgroup>
+        
+
+        </select>
+        <button type="submit" class="btn btn-skin btn-s">切換客戶</button>
+    </form>
+

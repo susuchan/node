@@ -1,0 +1,16 @@
+Message: {{this.message}} <p> 
+Status: {{error.status}} <p>
+Stack: {{error.alertMsg}}
+
+
+
+<script >
+$(document).ready(function () {
+
+     if(error.responseText == 'showAlert')
+              alert("Please enter correct user name and password.")
+
+     if ({{error.alertMsg}})
+        alert({{this.message}});
+});
+</script>

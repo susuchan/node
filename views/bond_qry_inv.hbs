@@ -1,0 +1,116 @@
+<script type="text/javascript">
+    $(function () {
+        $('#StartDate').datetimepicker({
+            format: 'YYYY/MM/DD',
+        });
+        $('#EndDate').datetimepicker({
+            format: 'YYYY/MM/DD',
+        });
+    });
+</script>
+
+
+       
+        {{!--<div class="row">
+                <form action="/Query/PBQ01" method="POST" id="QueryBonds" class="navbar-form navbar-left"> 
+                    <div class="form-group">
+                        交易日：
+                        <div class='input-group date' id='StartDate'>
+                            <input type='text' class="form-control" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                        ～
+                        <div class='input-group date' id='EndDate'>
+                            <input type='text' class="form-control" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                        <button type="submit" class="btn btn-default">查詢</button>
+                    </div>
+                </form>        
+        </div>--}}
+
+
+{{#showMsg msg}}{{/showMsg}}
+
+<div class="info_tb">
+查詢時間: {{nowtime}}
+</div>
+
+        <div class="table-responsive">
+            <div class="tab-pane active">
+                <table id="footable" class="footable metro-blue" data-sort="true" data-paging="true" data-page-size="10" data-page-navigation=".pagination" data-page-previous-text="prev" data-page-next-text="next">
+                    <thead>
+                        <tr>
+                            <th data-type="numeric" data-sort-initial="true">商品代號</th>
+                            <th>商品名稱</th>
+                            <th data-type="numeric">ISIN</th>
+                            {{!--<th data-sort-ignore="true">計價幣別</th>--}}
+                            <th data-hide="phone,tablet">計價幣別</th>
+                            <th data-type="numeric">持有面額</th>
+                            <th data-type="numeric" data-hide="phone,tablet">交割幣別</th>
+                            <th data-type="numeric" data-hide="phone,tablet">總投資成本</th>
+                            <th data-hide="phone,tablet">參考日期</th>
+                            <th>參考價(%)</th>
+                            <th data-hide="phone,tablet" data-sortable="false">參考市值</th>
+                            <th data-type="numeric" data-hide="phone,tablet">累計債息</th>
+                            <th data-type="numeric" data-hide="phone,tablet">投資損益<br>(不含債息)</th>
+                            <th data-type="numeric">報酬率(%)<br>(不含債息)</th>
+                            <th data-type="numeric" data-hide="phone,tablet">投資損益<br>(含債息)</th>
+                            <th data-type="numeric">報酬率(%)<br>(含債息)</th>                            
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {{#each data}}
+                            <tr>
+                                <td>{{this.symbol}}</td>
+                                <td>{{this.name}}</td>
+                                <td>{{this.isin}}</td>
+                                <td>{{this.trade_cur}}</td>
+                                <td align="right">{{#format_money this.total_pv}}{{/format_money}}</td>
+                                <td>{{this.settle_cur}}</td>
+                                <td align="right">{{#format_money this.total_cost 2}}{{/format_money}}</td>
+                                <td>{{#format_date this.ref_date 2}}{{/format_date}}</td>
+                                <td align="right">{{#format_ROI this.basis_price 2 100}}{{/format_ROI}}</td>
+                                <td align="right">{{#format_money this.total_value 2}}{{/format_money}}</td>
+                                
+                                <td align="right">{{#format_money this.acml_int 2}}{{/format_money}}</td>
+                                <td align="right">{{#format_money this.profit 2}}{{/format_money}}</td>
+                                <td align="right">{{#format_ROI this.roi 2 0}}{{/format_ROI}}</td>
+                                <td align="right">{{#format_money this.profit_wi 2}}{{/format_money}}</td>
+                                <td align="right">{{#format_ROI this.roi_wi 2 0}}{{/format_ROI}}</td>                                
+
+                                {{!--
+                                {{#ifGtZero this.roi}}
+                                    <td data-value="1"><span class="status-metro status-active">{{this.roi}} %</span></td>
+                                {{else}}
+                                    <td data-value="1"><span class="status-metro status-suspended">{{this.roi}} %</span></td>
+                                {{/ifGtZero}}
+                                --}}
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="15">
+                                <div class="pagination pagination-centered"></div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+            <div class="smaillw">
+            投資損益(含債息) = 參考市值 – 總投資成本 + 累計債息  <br>
+            報酬率(含債息) = 投資損益(含債息) / 總投資成本
+            </div>
+
+<script type="text/javascript">
+    $(function () {
+        $('table').footable();
+    });
+</script>

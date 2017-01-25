@@ -1,0 +1,65 @@
+
+{{#showMsg msg}}{{/showMsg}}
+
+    <form id="changecform" name="changecform" method="post" action="/bank/qry/balance">
+        <input type="hidden" name="original_url" value="{{original_url}}">
+        <select name="bank_acc" class="selectpicker">
+            <option>--- 請選擇銀行帳號 ---</option>
+        {{#each cus_bank_info}}
+            <option value="{{this.bank_cur}}:{{this.bank_branch}}:{{this.bank_acc}}">{{this.bank_no}} {{this.bank_branch}}{{this.bank_branch}}{{this.bank_acc}}</option>
+        {{/each}}
+        </select>
+        <button type="submit" class="btn btn-skin btn-s">切換</button>
+    </form>
+
+
+銀行帳號: {{cus_bank_acc}}
+
+<div class="small_boxes_container">
+<div class="info_tb">
+查詢時間: {{nowtime}}
+</div>    
+<div class="table-responsive">
+            <div class="tab-pane active">
+                <table id="footable" class="footable metro-blue" data-sort="false" data-paging="true" data-page-size="5" data-page-navigation=".pagination" data-page-previous-text="prev" data-page-next-text="next">
+                    <thead>                   
+                        <tr>                            
+                            <th>幣別</th>
+                            <th>幣別代碼</th>
+                            <th data-type="numeric" data-sort-initial="true">帳戶餘額</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {{#each bank_balance}}
+                            <tr>
+                                <td>{{this.name}}</td>
+                                <td>{{this.currency}}</td>
+                                <td align="right">{{#format_money this.amt 2}}{{/format_money}}</td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="12">
+                                <div class="pagination pagination-centered"></div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+        </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        //$('table').footable();
+        $('.table').footable({
+            "paging": {
+                "enabled": false
+            }
+        });
+    });
+</script>
+        
